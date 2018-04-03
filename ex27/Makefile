@@ -10,17 +10,21 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = display_file
+NAME =	display_file
 
-HEAD = header.h
+HEAD =	header.h
 
-SRCS = display_file.c
+SRCS =	display_file.c\
+		ft_putstr.c\
+		ft_putchar.c
 
-MAIN = main.c
+MAIN =	main.c
 
-FLAG = -Wall -Wextra -Werror
+FLAG =	-Wall -Wextra -Werror
 
-OBJET = display_file.o
+OBJET = display_file.o\
+		ft_putstr.o\
+		ft_putchar.o
 
 all : $(NAME)
 
@@ -30,13 +34,13 @@ $(NAME) :
 	 ranlib header.a
 
 #comp :
-#	@gcc $(FLAG) $(MAIN) ../../libft/libft.a header.a -o $(NAME)
+#	gcc $(FLAG) $(MAIN) header.a -o $(NAME)
 
 #exe : comp
 #	@./a.out
  
 clean :
-	rm -rf display_file.o 
+	rm -rf $(OBJET) 
 
 fclean : clean
 	rm -rf $(NAME)

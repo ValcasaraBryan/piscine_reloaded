@@ -15,12 +15,10 @@
 int		main(int argc, char **argv)
 {
 	int		ret;
-	int		i;
 
-	i = 1;
 	if (argc <= 2)
 	{
-		ret = open(argv[i], O_RDONLY);
+		ret = open(argv[1], O_RDONLY);
 		if (ret == -1)
 		{
 			ft_putstr("File name missing.\n");
@@ -28,7 +26,6 @@ int		main(int argc, char **argv)
 		}
 		ft_display_file(ret);
 		ret = 0;
-		i++;
 	}
 	else
 		ft_putstr("Too many arguments.\n");
