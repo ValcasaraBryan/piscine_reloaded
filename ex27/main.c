@@ -25,7 +25,6 @@ int		main(int argc, char **argv)
 			return (0);
 		}
 		ft_display_file(ret);
-		ret = 0;
 	}
 	else
 		ft_putstr("Too many arguments.\n");
