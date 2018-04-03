@@ -6,17 +6,23 @@
 /*   By: brvalcas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/03 15:01:29 by brvalcas          #+#    #+#             */
-/*   Updated: 2018/04/03 15:01:33 by brvalcas         ###   ########.fr       */
+/*   Updated: 2018/04/03 18:49:05 by brvalcas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-#include "../../libft/libft.h"
 
-int		ft_display_file(int	fd)
+void	ft_display_file(int fd)
 {
-	char	*str;
+	char	buf[BUFFER + 1];
+	int		ret;
 
-	read(fd, &str, 1);
-	return (fd);
+	ret = read(fd, buf, BUFFER);
+	buf[ret] = '\0';
+	if (ret == -1)
+	{
+		ft_putstr("read() failed.\n");
+		return ;
+	}
+	ft_putstr(buf);
 }
