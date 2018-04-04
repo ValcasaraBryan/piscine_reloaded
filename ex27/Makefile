@@ -32,6 +32,7 @@ $(NAME) :
 	 gcc -c $(FLAG) -I $(HEAD) $(SRCS)
 	 ar rc header.a $(OBJET)
 	 ranlib header.a
+	 gcc $(FLAG) $(MAIN) header.a -o $(NAME)
 
 #comp :
 #	gcc $(FLAG) $(MAIN) header.a -o $(NAME)

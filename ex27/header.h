@@ -18,7 +18,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-# define BUFFER 600000
+# define BUFFER 10
 
 void	ft_display_file(int	fd);
 void	ft_putchar(char c);

@@ -17,12 +17,11 @@ void	ft_display_file(int fd)
 	char	buf[BUFFER + 1];
 	int		ret;
 
-	ret = read(fd, buf, BUFFER);
-	buf[ret] = '\0';
-	if (ret == -1)
+	while((ret = read(fd, buf, BUFFER)) != (-1 && 0))
 	{
-		ft_putstr("read() failed.\n");
-		return ;
+		buf[ret] = '\0';
+		ft_putstr(buf);
 	}
-	ft_putstr(buf);
+	if (ret == -1)
+		ft_putstr("read() failed.\n");
 }
